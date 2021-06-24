@@ -17,3 +17,9 @@
   <img src="https://lenguajejs.com/vuejs/introduccion/estructura-carpetas/vue-estructura-carpetas.png"/>
 
 ---
+
+#### Notas - SPA: Helper de conexión a API REST y peticiones AJAX
+
+- En la carpeta **helpers** se ubica toda la logica del cliente que no tendra nada visual para el usuario, pero si tiene mucha importancia para el funcionamiento de la aplicacion, entre ellas se encuentran:
+  - Peticiones AJAX (la idea es hace una peticion general y luego reutilizarla)
+  - funciones en general de js que no tengan contenido UI
