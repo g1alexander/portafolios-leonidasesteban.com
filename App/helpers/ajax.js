@@ -8,7 +8,7 @@ export function ajax(props) {
       let message =
         err.statusText || "Ocurrio un error en la peticion a la API";
       document.getElementById("root").innerHTML = /*html*/ `
-        <div>
+        <div class="error">
           <p>Error ${err.status}: ${message}</p>
         </div>
       `;

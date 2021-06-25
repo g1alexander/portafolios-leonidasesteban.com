@@ -23,3 +23,64 @@
 - En la carpeta **helpers** se ubica toda la logica del cliente que no tendra nada visual para el usuario, pero si tiene mucha importancia para el funcionamiento de la aplicacion, entre ellas se encuentran:
   - Peticiones AJAX (la idea es hace una peticion general y luego reutilizarla)
   - funciones en general de js que no tengan contenido UI
+
+---
+
+#### Notas - SPA: Componentes UI y renderizado dinamico
+
+- Los componentes de UI son funciones JS que tienen interaccion directa con el **DOM**
+- Hay componentes que pueden tener **logica** o sencillamente no tenerla
+- Para crear un componente de utiza las tecnicas creacion de elementos de **HTML** por medio de **JS** (**innerHTML**, **createElement()** o combinar tecnicas)
+- Para crear los elemetos del **DOM** tener en cuenta declararlos con **"$"**
+- Una de las mejores cosas de trabajar con componentes es que puedes dividir la aplicacion tanto como desees y eso conlleva que la aplicacion sea muy reutilizable y tambien muy legible
+- Una de las tecnicas para el renderizado dinanico es pasarle los parametros atraves de la funcion del componente y dentro del componente a renderizar hacer un destructurin de la respuesta de la api
+
+  - ejemplo tomado del ejercicio SPA del curso de JON (la api empleada es la de wordpress)
+
+  ```js
+  import { Loader } from "./components/Loader.js";
+  import { Posts } from "./components/posts/Posts.js"; //componente padre
+  import { PostsCard } from "./components/posts/components/PostCard.js"; //componente hijo
+  import wp_api from "./helpers/wp_api.js"; //informacion api
+  import { ajax } from "./helpers/ajax.js"; //peticion fetch
+
+  export function App() {
+    const d = document,
+      $root = d.getElementById("root");
+
+    $root.appendChild(Posts());
+
+    ajax({
+      url: wp_api.POSTS,
+      success: (posts) => {
+        console.log(posts);
+        let html = "";
+        posts.forEach((post) => (html += PostsCard(post))); //renderizado dinamico
+        d.getElementById("posts").innerHTML = html;
+        d.querySelector(".loader").style.display = "none";
+      },
+    });
+  }
+  ```
+
+  ```js
+  //renderizado dinamico
+  export function PostsCard(props) {
+    let { date, title, slug, _embedded } = props,
+      dateFormat = new Date(date).toLocaleString(),
+      urlImg = _embedded["wp:featuredmedia"]
+        ? _embedded["wp:featuredmedia"][0].source_url
+        : "App/assets/kEnAi.svg";
+
+    return /*html*/ `
+        <article class="post-card">
+          <img src="${urlImg}" alt="${title.rendered}">
+          <h2>${title.rendered}</h2>
+          <p>
+            <time datetime="${date}">${dateFormat}</time>
+            <a href="#/${slug}">Ver publicacion</a>
+          </p>
+        </article>
+      `;
+  }
+  ```
