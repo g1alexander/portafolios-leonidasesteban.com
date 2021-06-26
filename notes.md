@@ -84,3 +84,27 @@
       `;
   }
   ```
+
+---
+
+#### Notas - SPA: Enrutamiento (Router) y Asincronismo del Router
+
+- Suena muy loco, pero mejore el codigo del profe Jon (jjjj) en el **router** el profe utilizo el **if else** para el funcionamiento del **router**, para una mejor optimizacion del codigo preferi utilizar un objecto. Me base en el video de [Midudev](https://www.youtube.com/watch?v=0NlsJuwFsrQ). Lo mas loco fue que con este metodo el **Router** quedo muy similar al del framework **Vue js**
+
+- Para generar un **router** con **vanilla js** se utiliza la propiedad **Location.hash** de **javascript**. que hace esta propiedad?
+
+  - los cambios de pagina se hacen atraves de las etiquetas <a href="#/..."></a> (siempre debe ir el hash para evitar recargar la pagina)
+  - con la referencia el **href** de los enlaces ponemos ocupar el objeto **Location.hash** y comprobar en que ruta nos encontramos
+  - Teniendo la ruta atraves del **Location.hash** podemos ejecutar una o otra accion y cambiar el contenido de nuestra aplicacion
+  - Para saber en que ruta estamos podemos hacerlo de muchas maneras, el profe Jon ocupo los **if else**, pero tambien se pueden ocupar los objetos (queda un poco mejor)
+
+- **NOTA IMPORTANTE:** las SPA son por lo general asicronas esto quiere decir que debemos manejar por medio de **async** - **await** las peticones y **router**, debido a que si no se hace asi el contenido estactico cargara muy rapidamente y del contenido dinamico se quedara esperando hasta que obtenga respuesta (lo cual quedaria la aplicacion en blanco). El manejo asicronico del Router ademas permitira que cuando se haga una peticon **Ajax** podamos manejar de mejor manera un esperador (**Loader**) para indicarle al usuario que se esta cargando el contenido
+
+---
+
+#### Notas - SPA: refactorizacion
+
+- **NOTAS IMPORTANTES:**
+  - Cuando creamos una aplicacion es importante que a medida que avazas en el desarrollo de ella, en cierto momentos claves debes detenerte y estructurar de mejor manera la aplicación, para permitir que puedas escalar de mejor manera en el desarrollo
+  - esto puede ser como: restructurar carpetas, quitar duplicados, modular mejor la aplicacion, reajustar estilos, cambiar estructura semantica del proyecto (HTML), etc ...
+  - Jon nos dice que conforme vayas estando en mas proyectos vas ganando mas experiencia en este aspecto
