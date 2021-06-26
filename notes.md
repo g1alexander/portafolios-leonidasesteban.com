@@ -108,3 +108,8 @@
   - Cuando creamos una aplicacion es importante que a medida que avazas en el desarrollo de ella, en cierto momentos claves debes detenerte y estructurar de mejor manera la aplicación, para permitir que puedas escalar de mejor manera en el desarrollo
   - esto puede ser como: restructurar carpetas, quitar duplicados, modular mejor la aplicacion, reajustar estilos, cambiar estructura semantica del proyecto (HTML), etc ...
   - Jon nos dice que conforme vayas estando en mas proyectos vas ganando mas experiencia en este aspecto
+
+#### Notas - SPA: vista dinamica
+
+- Para generar una vista dinamica es importante tener el identificador de la vista individual que vamos a buscar 
+- para tener este identificador nos puede ayudar el **localstorage** y los **data-attribute** de HTML, porque nos permite tener la facilidad para consultarlo en cualquier parte de nuestra aplicacion
