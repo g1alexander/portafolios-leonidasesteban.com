@@ -109,7 +109,16 @@
   - esto puede ser como: restructurar carpetas, quitar duplicados, modular mejor la aplicacion, reajustar estilos, cambiar estructura semantica del proyecto (HTML), etc ...
   - Jon nos dice que conforme vayas estando en mas proyectos vas ganando mas experiencia en este aspecto
 
+---
+
 #### Notas - SPA: vista dinamica
 
-- Para generar una vista dinamica es importante tener el identificador de la vista individual que vamos a buscar 
+- Para generar una vista dinamica es importante tener el identificador de la vista individual que vamos a buscar
 - para tener este identificador nos puede ayudar el **localstorage** y los **data-attribute** de HTML, porque nos permite tener la facilidad para consultarlo en cualquier parte de nuestra aplicacion
+
+---
+
+#### Notas - SPA: buscador
+
+- En los buscadores puedes ayudarte mucho del **localstorage** ya que puedes almacenar el valor del input ahi, y modificarlo dinamicamente
+- en el **form HTML** es importante que el **input** sea de **type search** (recomendable), la razon es que este tiene un tache para borrar el valor si asi lo desea (mejor **UX** al usuario)
