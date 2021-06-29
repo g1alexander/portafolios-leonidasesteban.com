@@ -137,3 +137,14 @@
 - el codigo que hizo el profe Jon no esta en github, pero esta es la [clase](https://youtube.com/watch?v=XEf5jW9Y9oE&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA) donde lo explica, y vale la pena implementarlo
 
 ---
+
+#### Notas - SPA: Styled Components & Single File Components
+
+- Esta es una filosofia que la implemento el framework **Vue js** (amo :b) en la cual consiste en que un mismo archivo este los estilos **css** , el marcado semantico de **HTML** y la logica de **JS**
+- En **vallina js** se puede hacer perfectamente esto
+
+- Hay algo muy importante de esta filosofia y es que la carga de contenido como es asiscrono cuando ingresemos a esa seccion, el DOM lo interpreta como si no existiera (asi este), a estos los **frameworks** y **librerias** tienen una solucion la cual es los **ciclos de vida del componente** (este es un tema mas avanzado)
+  - en **vanilla js** se soluciona simplemente que cuando se ejecute la logica del componente dentro de un **setTimeout()** asi:
+  ```js
+  setTimeout(() => nombre_funcion(), 100);
+  ```

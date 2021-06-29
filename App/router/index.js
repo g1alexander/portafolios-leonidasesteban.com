@@ -1,3 +1,4 @@
+import { FormContact } from "../components/form/FormContact.js";
 import { Home } from "../helpers/home.js";
 import { PostView } from "../helpers/post_view.js";
 import { Search } from "../helpers/search.js";
@@ -10,8 +11,7 @@ export async function Router() {
     "": () => Home(),
     "#/": () => Home(),
     "#/search": () => Search(),
-    "#/contact": () =>
-      ($main.innerHTML = /*html*/ `<h2>Seccion de contact</h2>`),
+    "#/contact": () => $main.appendChild(FormContact()),
   };
 
   const DinamicView = () => PostView();
