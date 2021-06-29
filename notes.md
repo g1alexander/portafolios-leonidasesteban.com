@@ -122,3 +122,16 @@
 
 - En los buscadores puedes ayudarte mucho del **localstorage** ya que puedes almacenar el valor del input ahi, y modificarlo dinamicamente
 - en el **form HTML** es importante que el **input** sea de **type search** (recomendable), la razon es que este tiene un tache para borrar el valor si asi lo desea (mejor **UX** al usuario)
+
+---
+
+#### Notas - SPA: Infinite scroll
+
+- Este ejercicio lo intente hacer yo, y me salio muy bien
+- Viendo el video del profe Jon lo hizo un poco diferente, aparte de esto explico un concepto avanzado
+
+  - HOC (High Order Components) Este concepto lo maneja librerias como **React** y son una técnica avanzada en **React** (se puede perfectamente con **vanilla js** o otros **frameworks**) para el reuso de la lógica de componentes
+  - porque hablo de este concepto en el **infinite scroll** ?. la razon fue que en la funcion del **infinite scroll** la importo de manera global en la **aplicacion** haciendo que tenga que validar en **la ruta** y el **componente** que iba a modificar, si no lo hacia asi iba a llamar la peticion **AJAX** en todas las rutas de la **aplicacion**
+  - con el **HOC** lo que hizo fue almacenar en la variable un componente dependiendo de la ruta en que se encontrara
+
+- el codigo que hizo el profe Jon no esta en github, pero esta es la [clase](https://youtube.com/watch?v=XEf5jW9Y9oE&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA) donde lo explica, y vale la pena implementarlo
