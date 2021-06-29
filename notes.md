@@ -135,3 +135,5 @@
   - con el **HOC** lo que hizo fue almacenar en la variable un componente dependiendo de la ruta en que se encontrara
 
 - el codigo que hizo el profe Jon no esta en github, pero esta es la [clase](https://youtube.com/watch?v=XEf5jW9Y9oE&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA) donde lo explica, y vale la pena implementarlo
+
+---
